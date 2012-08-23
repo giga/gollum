@@ -195,7 +195,7 @@ module Precious
 
       begin
         wiki.write_page(name, format, params[:content], commit_message)
-        page = wiki.page(name)
+        page = wiki.paged(name, path)
         redirect to("/#{page.escaped_url_path}") unless page.nil?
       rescue Gollum::DuplicatePageError => e
         @message = "Duplicate page: #{e.message}"

@@ -396,6 +396,7 @@ module Gollum
       if checked_dir = BlobEntry.normalize_dir(checked_dir)
         checked_dir.downcase!
       end
+      checked_dir = '' if checked_dir.nil?
 
       map.each do |entry|
         next if entry.name.to_s.empty?
